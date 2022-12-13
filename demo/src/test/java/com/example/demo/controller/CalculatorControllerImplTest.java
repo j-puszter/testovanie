@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -28,19 +28,19 @@ class CalculatorControllerImplTest {
     private MockMvc mockMvc;
 
     @Test
+    @DisplayName("GET /primes/{n}")
     void primeNumbers() throws Exception {
-        MvcResult result = this.mockMvc
+
+        this.mockMvc
                 .perform(get("/primes/{n}", 5))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                //.andExpect(content().json());
-                .andReturn();
-
-        System.out.println(result.getResponse().getContentAsString());
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(content().json("[2,3,5]"));
     }
 
     @Test
+    @DisplayName("POST /isPrime")
     void isPrime() throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         this.mockMvc

@@ -6,15 +6,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("")
 public class CalculatorController {
 
-    @GetMapping("primes/{n}")
-    public List<Integer> primeNumbers(@PathVariable Integer n) {
+    @GetMapping("/primes/{n}")
+    public static List<Integer> primeNumbers(@PathVariable Integer n) {
         return Calculator.primeNumbers(n);
     }
 
-    @PostMapping("isPrime")
+    @PostMapping("/isPrime")
     public static boolean isPrime(@RequestBody Integer n) {
         return Calculator.isPrime(n);
     }

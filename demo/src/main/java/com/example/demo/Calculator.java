@@ -1,11 +1,8 @@
 package com.example.demo;
 
-import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
 public class Calculator {
     public static List<Integer> primeNumbers(int n) {
         List<Integer> primeNumbers = new ArrayList<>();
