@@ -14,7 +14,7 @@ public class CalculatorController {
         return Calculator.primeNumbers(n);
     }
 
-    @PostMapping("isPrime/{n}")
+    @PostMapping("isPrime")
     public static boolean isPrime(@RequestBody Integer n) {
         return Calculator.isPrime(n);
     }
