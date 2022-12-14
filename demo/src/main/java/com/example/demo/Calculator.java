@@ -6,7 +6,7 @@ import java.util.List;
 public class Calculator {
     public static List<Integer> primeNumbers(int n) {
         List<Integer> primeNumbers = new ArrayList<>();
-        for (int i = 2; i <= n; i++) {
+        for (int i = 1; i <= n; i++) {
             if (isPrime(i)) {
                 primeNumbers.add(i);
             }
@@ -15,8 +15,10 @@ public class Calculator {
     }
 
     public static boolean isPrime(int number) {
-        if(number < 1 ) {
+        if(number < 1 || number == 2) {
             return false;
+        } else if (number == 1) {
+            return true;
         }
 
         for (int i = 2; i < number; i++) {
