@@ -29,13 +29,11 @@ class UserRepositoryControllerIntegrationTest {
     @Test
     @DisplayName("GET /primes/{n}")
     void primeNumbers() throws Exception {
-
         this.mockMvc
                 .perform(get("/primes/{n}", 5))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                //.andExpect(content().)
                 .andExpect(content().json("[2,3,5]"));
     }
 
@@ -77,16 +75,4 @@ class UserRepositoryControllerIntegrationTest {
                 .andDo(print())
                 .andExpect(status().is(404));
     }
-/*
-    @Test
-    @DisplayName("GET 500  /isPrime/{n}")
-    void serverError() throws Exception {
-        ObjectMapper mapper = new ObjectMapper();
-        this.mockMvc
-                .perform(get("/isPrime/{n}", 0))
-                .andDo(print())
-                .andExpect(status().is(500));
-    }
-
- */
 }
