@@ -18,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(CalculatorController.class)
-class UserRepositoryControllerIntegrationTest {
+class CalculatorControllerIntegrationTest {
 
     @MockBean
     CalculatorController controller;
@@ -44,7 +44,7 @@ class UserRepositoryControllerIntegrationTest {
         this.mockMvc
                 .perform(post("/isPrime")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(mapper.writeValueAsString("1"))
+                        .content(mapper.writeValueAsString("2"))
                 )
                 .andDo(print())
                 .andExpect(status().isOk())
