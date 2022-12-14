@@ -1,5 +1,5 @@
-INSERT INTO users (id, username) VALUES (1, 'a');
-INSERT INTO users (id, username) VALUES (2, 'b');
-INSERT INTO users (id, username) VALUES (3, 'c');
-INSERT INTO users (id, username) VALUES (4, 'd');
-INSERT INTO users (id, username) VALUES (5, 'e');
+INSERT INTO users (id, username, password) VALUES (1, 'a', 'a');
+INSERT INTO users (id, username, password) VALUES (2, 'b', 'b');
+INSERT INTO users (id, username, password) VALUES (3, 'c', 'c');
+INSERT INTO users (id, username, password) VALUES (4, 'd', 'd');
+INSERT INTO users (id, username, password) VALUES (5, 'e', 'e');

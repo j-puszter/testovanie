@@ -36,4 +36,5 @@ public class UserController {
     public void deleteById(@PathVariable Integer id) {
         repository.deleteById(id);
     }
+
 }
