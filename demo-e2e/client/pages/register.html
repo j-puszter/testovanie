@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <form action="#">
+            <div class="title">Register</div>
+            <span id="errMsg"></span>
+            <div class="input-box underline">
+                <input id="email" type="text" placeholder="Enter Your Email*" required autocomplete="off">
+                <div class="underline"></div>
+            </div>
+            <div class="input-box">
+                <input id="password" type="password" placeholder="Enter Password*" required>
+                <div class="underline"></div>
+            </div>
+            <div class="input-box">
+                <input id="re-password" type="password" placeholder="Re-Enter Password*" required>
+                <div class="underline"></div>
+            </div>
+            <div class="input-box button">
+                <button onclick="register()">Register</button>
+            </div>
+            <br>
+            <br>
+            <div class="input-box register">
+                <a href="/index.html">Login</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script src="/js/script-auth.js"></script>
+
+</html>
